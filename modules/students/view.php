@@ -44,7 +44,10 @@ function escape(string $value): string
             <h1>Students</h1>
             <p>View and search student records.</p>
         </div>
-        <a href="../../dashboard.php">Back to dashboard</a>
+        <nav aria-label="Student navigation">
+            <a href="add.php">Add student</a>
+            <a href="../../dashboard.php">Back to dashboard</a>
+        </nav>
     </header>
 
     <p class="notice">These are sample records for the page layout. They are not stored in a database.</p>
