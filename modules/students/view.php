@@ -7,9 +7,9 @@ if (!isset($_SESSION['user'])) {
 }
 
 $students = [
-    ['name' => 'Aarav Sharma', 'grade' => 'Grade 8', 'email' => 'aarav@example.com'],
-    ['name' => 'Maya Rai', 'grade' => 'Grade 7', 'email' => 'maya@example.com'],
-    ['name' => 'Samir Thapa', 'grade' => 'Grade 9', 'email' => 'samir@example.com'],
+    ['id' => 1, 'name' => 'Aarav Sharma', 'grade' => 'Grade 8', 'email' => 'aarav@example.com'],
+    ['id' => 2, 'name' => 'Maya Rai', 'grade' => 'Grade 7', 'email' => 'maya@example.com'],
+    ['id' => 3, 'name' => 'Samir Thapa', 'grade' => 'Grade 9', 'email' => 'samir@example.com'],
 ];
 
 function escape(string $value): string
@@ -64,6 +64,7 @@ function escape(string $value): string
                     <th scope="col">Name</th>
                     <th scope="col">Grade</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody id="student-list">
@@ -72,6 +73,7 @@ function escape(string $value): string
                         <td><?= escape($student['name']) ?></td>
                         <td><?= escape($student['grade']) ?></td>
                         <td><?= escape($student['email']) ?></td>
+                        <td><a href="edit.php?id=<?= (int) $student['id'] ?>">Edit</a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
